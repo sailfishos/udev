@@ -1,0 +1,253 @@
+* Thu Jul 14 2011 Chris Ferron <chris.e.ferron@linux.intel.com> - 172
+- updated udev from v171 to v172 needed for features required 
+  by v30 of systemd. 
+
+* Sun Jun 26 2011 Anas Nashif <anas.nashif@intel.com> - 171
+- gtk-doc files for gudev were packaged twice
+
+* Sun Jun 12 2011 Anas Nashif <anas.nashif@intel.com> - 171
+- handle errors in %post
+
+* Sat Jun 11 2011 Anas Nashif <anas.nashif@intel.com> - 171
+- Check for /bin/systemctl before we attempt to run it
+
+* Sun Jun 05 2011 Anas Nashif <anas.nashif@intel.com> - 171
+- Remove circular dependency on systemd
+- Remove gtk-doc requirement
+
+* Fri May 27 2011 Chris Ferron <chris.e.ferron@linux.intel.com> - 171
+- Updated the version of udev from v166 to v171. Along with fixes 
+  and changes to systemd, 171 has refined systemd additions and fixes needed. 
+
+* Wed May 25 2011 Chris Ferron <chris.e.ferron@linux.intel.com> - 166
+- Updated spec file to change systemctl as a requires to the package systemd
+- for each scriplet section. Also added a Requires systemd as systemd is configured
+- as a build option for this package exposing systemd features. 
+
+* Wed May 18 2011 Anas Nashif <anas.nashif@intel.com> - 166
+- Move useless documentation from runtime package
+
+* Mon May 16 2011 Auke Kok <auke-jan.h.kok@intel.com> - 166
+- Add post dependency on systemctl for script.
+
+* Wed May 11 2011 Austin Zhang <austin.zhang@intel.com> - 161
+- Enable one type oaktrail platform hard buttons. BMC#17410.
+
+* Wed May 11 2011 Chris Ferron <chris.e.ferron@linux.intel.com> - 166
+- FEA#16109 - [FEA] Implement SystemD as MeeGo init provide
+- removed the requirment for pidof as it is not used and sysvinit package 
+  provided it and is not deleted.
+
+* Tue May 03 2011 Chris Ferron <chris.e.ferron@linux.intel.com> - 166
+- FEA#16109 - [FEA] Implement SystemD as MeeGo init provide
+- with the 166 package update which supports systemd by configuration,
+  ajusted spec and packaging accordingly to enable systemd. 
+- Update to 166
+- Drop merged lenovo patch (BMC#14198)
+
+* Fri May 03 2011 Neo Fang <neo.fang@intel.com> - 161
+- Enable and preinstall 60-persistent-storage.rules to fix BMC#13108
+
+* Thu Apr 21 2011 Kristen Carlson Accardi <kristen@linux.intel.com> - 161
+- Add rule to enable runtime power management for the ehci driver
+  at boot time for Moorestown tablet.
+
+* Tue Mar 15 2011 Neo Fang <neo.fang@intel.com> - 161
+- Modify Lenovo-S10-3t keymap definition to fix BMC#14198
+
+* Thu Mar 03 2011 Neo Fang <neo.fang@intel.com> - 161
+- Trigger add rtc in start_udev to fix BMC#13902
+
+* Wed Oct 27 2010 Anas Nashif <anas.nashif@intel.com> - 161
+- Remove dependency on gobject-introspection
+
+* Thu Oct 21 2010 Auke Kok <auke-jan.h.kok@intel.com> - 161
+- Splitting the mkdevnodes package into a separate package
+
+* Mon Aug 16 2010 Yin Kangkai <kangkai.yin@intel.com> - 161
+- Upgrade to 161
+- Drop fix-5820-fail-to-install.patch
+- Integrate udev-162-keymap-for-lenovo-ideapad.patch, fix BMC #5226
+
+* Tue Jul 13 2010 Marko Saukko <marko.saukko@cybercom.com> - 158
+- Removed dependency to udev-rules package.
+
+* Mon Jul 05 2010 Jian-feng Ding <jian-feng.ding@intel.com> 158
+- Upgrade to 158 and updated the following patches:
+    udev-118-sysconf.patch
+    udev-136-audio-video.patch
+    udev-136-tty-group.patch
+    
+* Fri Apr 23 2010 Michael Demeter <michael.demeter@intel.com> - 150
+- Add rule to touch only block devices. This is a fix for BUG 95
+
+* Fri Mar 26 2010 Arjan van de Ven <arjan@linux.intel.com> - 150
+- add a filesystem identification rule, fixes meego bz #160
+
+* Thu Mar 25 2010 Arjan van de Ven <arjan@linux.intel.com> - 150
+- make sure /dev/shm exists rather than crashing start_udev
+
+* Wed Mar 24 2010 Arjan van de Ven <arjan@linux.intel.com> - 150
+- make sure /dev/pts exists rather than crashing start_udev
+
+* Wed Mar 24 2010 Arjan van de Ven <arjan@linux.intel.com> - 150
+- fix naming convention of the unused rules subpackage to be consistent
+
+* Wed Mar 24 2010 Anas Nashif <anas.nashif@intel.com> - 150
+- Now require virtual udev-rules provides by veritical specific packages
+  such as udev-rules-netbook
+
+* Tue Mar 23 2010 Arjan van de Ven <arjan@linux.intel.com> - 150
+- split off a subpackage for udev rules that we don't use
+
+* Tue Mar 23 2010 Auke Kok <auke-jan.h.kok@intel.com> - 150
+- replace mknods with mkdevnodes - simplifies device node
+  creation at boot. /dev is now filled in using sysfs information
+  and without hardcoded tables.
+
+* Sat Jan 9 2010 Peter Zhu <peter.j.zhu@intel.com> - 150
+- Update to 150
+
+* Tue Dec 8 2009 Peter Zhu <peter.j.zhu@intel.com> - 145
+- Get it build
+
+* Thu Sep 24 2009 Anas Nashif <anas.nashif@intel.com> - 145
+- Add groups used in udev rules
+
+* Thu Sep 3 2009 Vivian Zhang <vivian.zhang@intel.com> 145
+- Quick fix for 5820: fail to install the image, which is caused by the udevd crash
+
+* Wed Aug 26 2009 Arjan van de Ven <arjan@linux.intel.com> 145
+- make sure the .pc files are in /usr/lib/pkgconfig
+
+* Tue Aug 25 2009 Arjan van de Ven <arjan@linux.intel.com> 145
+- don't play symlinking tricks in %%post for the pkgconfig files
+
+* Mon Aug 24 2009 Peter Zhu <peter.j.zhu@intel.com> 145
+- wrong link to stdin/stdout fixing 5496
+
+* Thu Jul 30 2009 Austin Zhang <austin.zhang@linux.intel.com> 145
+- Split moblin specific rules to individual pkg as less modifications 
+  should not ask the whole udev update.
+
+* Tue Jul 28 2009 Austin Zhang <austin.zhang@linux.intel.com> 145
+- Fixed wrong symbolic link on scsi_id
+
+* Wed Jul 22 2009 Arjan van de Ven <arjan@linux.intel.com> 145
+- fix tty permissions again
+
+* Mon Jul 20 2009 Peter Zhu <peter.j.zhu@intel.com> 143
+- Obsoletes udev-extra
+
+* Thu Jul 15 2009 Austin Zhang <austin.zhang@intel.com> 143
+- Updated to 145 with some related pkgs update and bug fix.
+  (145 resolved that udev-worker segfault issue compared with 143)
+
+* Mon Jul 13 2009 Arjan van de Ven <arjan@linux.intel.com> 136
+- make sure /dev/tty2 has the video permissions so that X can talk to it
+
+* Wed Jul 1 2009 Arjan van de Ven <arjan@linux.intel.com> 136
+- use a group for new input devices to make non-root-X work
+
+* Fri Jun 19 2009 Xu Li <xu.li@intel.com> 136
+- Sync clock after detecting the rtc device; fix bug#3025
+
+* Wed May 6 2009 Austin Zhang <austin.zhang@intel.com> 136
+- Fix #2027: unbound variable MAKEDEV
+
+* Tue Apr 21 2009 Passion Zhao <passion.zhao@intel.com> 136
+- CVE-2009-1185, CVE-2009-1186
+
+* Tue Apr 07 2009 Anas Nashif <anas.nashif@intel.com> 136
+- Add /dev/lpe for moorestown
+
+* Wed Apr 01 2009 Vivian Zhang <vivian.zhang@intel.com> 136
+- Add more device nodes: sda9, sda10 (bug #1414)
+
+* Thu Mar 26 2009 Austin Zhang <austin.zhang@intel.com> 136
+- Fixed error handling when creating nodes (bug #1213)
+
+* Wed Mar 25 2009 Vivian Zhang <vivian.zhang@intel.com> 136
+- Fixed the minor number of sda5-7 to fix #1353
+
+* Wed Mar 18 2009 Arjan van de Ven <arjan@linux.intel.com> 136
+- add more device nodes for sda 
+
+* Tue Feb 17 2009 Anas Nashif <anas.nashif@intel.com> 136
+- Replace obsolete option -s with -e
+
+* Sun Feb 15 2009 Anas Nashif <anas.nashif@intel.com> 136
+- use correct mknods options, -e instead of -s
+
+* Thu Feb 12 2009 Arjan van de Ven <arjan@linux.intel.com> 136
+- start udev faster
+
+* Mon Feb 09 2009 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 136
+- Fix typo in help
+
+* Mon Feb 09 2009 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 136
+- Make mknods error-tolerant, fix symlink argument order
+
+* Mon Feb  9 2009 Yin Kangkai <kangkai.yin@intel.com> 136
+- Fix Source0 in spec
+
+* Tue Jan 27 2009 Arjan van de Ven <arjan@linux.intel.com> 136
+- add more USB device IDs
+
+* Tue Jan 20 2009 Yong Wang <yong.y.wang@intel.com> 136
+- Fix bug #153 again as QA reported another device that should be autosuspended
+
+* Thu Jan 15 2009 Anas Nashif <anas.nashif@intel.com> 136
+- Added video devices to video group
+
+* Thu Jan 15 2009 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 136
+- Add static nodes for /dev/sdb to solve issues found installing to a second drive
+
+* Wed Jan 14 2009 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 136
+- Fix last call to udevadm control --env who was not using --env
+
+* Wed Jan 14 2009 Yong Wang <yong.y.wang@intel.com> 136
+- Rework the usb autosuspend patch (bug 153) so that it works with udev-136
+
+* Tue Jan 13 2009 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 136
+- Add /dev/snd directory and remove old /etc/udev/rules.d
+
+* Fri Jan 09 2009 Anas Nashif <anas.nashif@intel.com> 136
+- Fixed command arguments
+- Fixed package names
+
+* Thu Jan 08 2009 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 136
+- updated to udev-136, big cleanup in patches and directory layout changes
+
+* Tue Jan 06 2009 Yong Wang <yong.y.wang@intel.com> 120
+- Add moblin specific rules to fix usb autosuspend issue (bug 153)
+
+* Fri Dec 19 2008 Arjan van de Ven <arjan@linux.intel.com> 120
+- Make the DRM devices accessible to the moblin users group
+
+* Fri Dec 19 2008 Arjan van de Ven <arjan@linux.intel.com> 120
+- omit verbose text messages
+
+* Fri Dec 19 2008 Arjan van de Ven <arjan@linux.intel.com> 120
+- Make sure /dev/console always exists
+
+* Thu Dec 18 2008 Arjan van de Ven <arjan@linux.intel.com> 120
+- Drop persistent storage, we don't need it and it costs boot time
+
+* Fri Dec 12 2008 Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com> 120
+- General speed up of udev startup
+  * Replace MAKEDEV usage by a simple C program that creates files based
+    on a table read on stdin (mknods). This cuts the overhead of
+    invoking the same program many times.
+  * Cleanup start_udev, introduce boot-time assumptions
+  * move uneeded rules to -extra
+
+* Thu Dec 11 2008 Anas Nashif <anas.nashif@intel.com> 120
+- fastinit replaces initscripts
+
+* Thu Aug 7  2008 Anas Nashif <anas.nashif@intel.com>
+- Remove dependency on libsepol
+
+* Wed Jul 23 2008 Martin Xu <martin.xu@intel.com>
+- add %doc to man file
+

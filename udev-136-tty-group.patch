@@ -1,0 +1,12 @@
+diff -rupN udev-158/rules/rules.d/50-udev-default.rules udev-158-new/rules/rules.d/50-udev-default.rules
+--- udev-158/rules/rules.d/50-udev-default.rules	2010-06-18 03:52:15.000000000 +0800
++++ udev-158-new/rules/rules.d/50-udev-default.rules	2010-07-05 16:10:00.858535248 +0800
+@@ -7,7 +7,7 @@ KERNEL=="pty[pqrstuvwxyzabcdef][01234567
+ KERNEL=="tty[pqrstuvwxyzabcdef][0123456789abcdef]", GROUP="tty", MODE="0660"
+ KERNEL=="ptmx",			GROUP="tty", MODE="0666"
+ KERNEL=="tty",			GROUP="tty", MODE="0666"
+-KERNEL=="tty[0-9]*",		GROUP="tty", MODE="0620"
++KERNEL=="tty[0-9]*",		GROUP="video", MODE="0660"
+ KERNEL=="vcs|vcs[0-9]*|vcsa|vcsa[0-9]*", GROUP="tty"
+ 
+ # serial

@@ -1,0 +1,8 @@
+<package project="Mer:Trunk:Base" name="udev">
+  <title>A userspace implementation of devfs</title>
+  <description>The udev package contains an implementation of devfs in 
+userspace using sysfs and netlink.
+
+</description>
+  <url>http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html</url>
+</package>

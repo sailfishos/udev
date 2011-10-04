@@ -1,0 +1,13 @@
+diff -urN udev-150/Makefile.am udev-150-new/Makefile.am
+--- udev-150/Makefile.am	2010-01-07 23:18:17.000000000 +0800
++++ udev-150-new/Makefile.am	2010-01-09 21:15:05.000000000 +0800
+@@ -112,8 +112,7 @@
+ udevconfdir = $(sysconfdir)/udev
+ dist_udevconf_DATA = udev.conf
+ 
+-sharepkgconfigdir = $(datadir)/pkgconfig
+-sharepkgconfig_DATA = udev/udev.pc
++pkgconfig_DATA += udev/udev.pc
+ 
+ sbin_PROGRAMS = \
+ 	udev/udevd \

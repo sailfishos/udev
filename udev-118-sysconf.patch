@@ -1,0 +1,24 @@
+diff -rupN udev-158/rules/rules.d/60-persistent-storage.rules udev-158-new/rules/rules.d/60-persistent-storage.rules
+--- udev-158/rules/rules.d/60-persistent-storage.rules	2010-05-25 15:48:55.000000000 +0800
++++ udev-158-new/rules/rules.d/60-persistent-storage.rules	2010-07-05 15:48:01.899419405 +0800
+@@ -3,6 +3,8 @@
+ # persistent storage links: /dev/disk/{by-id,by-uuid,by-label,by-path}
+ # scheme based on "Linux persistent device names", 2004, Hannes Reinecke <hare@suse.de>
+ 
++ENV{UDEV_NO_PERSISTENT_STORAGE}=="1", GOTO="persistent_storage_end"
++
+ # forward scsi device event to corresponding block device
+ ACTION=="change", SUBSYSTEM=="scsi", ENV{DEVTYPE}=="scsi_device", TEST=="block", ATTR{block/*/uevent}="change"
+ 
+diff -rupN udev-158/rules/rules.d/60-persistent-storage-tape.rules udev-158-new/rules/rules.d/60-persistent-storage-tape.rules
+--- udev-158/rules/rules.d/60-persistent-storage-tape.rules	2010-04-12 22:40:43.000000000 +0800
++++ udev-158-new/rules/rules.d/60-persistent-storage-tape.rules	2010-07-05 15:48:01.899419405 +0800
+@@ -2,6 +2,8 @@
+ 
+ # persistent storage links: /dev/tape/{by-id,by-path}
+ 
++ENV{UDEV_NO_PERSISTENT_STORAGE}=="1", GOTO="persistent_storage_tape_end"
++
+ ACTION=="remove", GOTO="persistent_storage_tape_end"
+ 
+ # type 8 devices are "Medium Changers"
