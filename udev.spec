@@ -1,5 +1,4 @@
 #specfile originally created for Fedora, modified for Moblin Linux
-%define debug true
 %define udev_libdir /lib/udev
 %define firmwaredir /lib/firmware
   
@@ -40,8 +39,6 @@ Requires: MAKEDEV
 Requires: sed 
 Requires: pam 
 Requires: mkdevnodes
-# Drags in X11, disabled --cvm
-# Requires: ConsoleKit >= 0.4.1
 
 Requires(post):   /bin/systemctl
 Requires(preun):  /bin/systemctl
@@ -50,8 +47,10 @@ BuildRequires: sed flex
 BuildRequires: hwdata 
 BuildRequires: pam-devel
 BuildRequires: libacl-devel libusb-devel
-BuildRequires: glib2-devel bison findutils
-BuildRequires: gperf usbutils libtool
+BuildRequires: bison findutils
+BuildRequires: gperf libtool
+BuildRequires: pkgconfig(glib-2.0)
+BuildRequires: pkgconfig(usbutils)
 
 Obsoletes: udev-extra
 
@@ -151,8 +150,6 @@ mkdir -p \
 
 rm -f $RPM_BUILD_ROOT/%{_libdir}/*.la
 
-#mv $RPM_BUILD_ROOT/usr/share/pkgconfig/* $RPM_BUILD_ROOT/usr/lib/pkgconfig 
-#mv $RPM_BUILD_ROOT/lib/pkgconfig/* $RPM_BUILD_ROOT/usr/lib/pkgconfig 
 # force relative symlinks
 ln -sf ..%{udev_libdir}/scsi_id $RPM_BUILD_ROOT/sbin/scsi_id
 
@@ -255,9 +252,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/udev/udev.conf
 
-#%config(missingok) %{_sysconfdir}/hotplug.d/default/10-udev.hotplug
-#%config(noreplace) %attr(0644,root,root) %{_sysconfdir}/scsi_id.config
-
 %dir %attr(0755,root,root) %{firmwaredir}
 
 %dir %attr(0755,root,root) /var/lib/udev
@@ -339,13 +333,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libudev
 %defattr(0644, root, root, 0755)
-%doc COPYING
+%doc libudev/COPYING
 %attr(0755,root,root) /%{_lib}/libudev.so.*
-#%attr(0755,root,root) /%{_lib}/libudev.la
 
 %files -n libudev-devel
 %defattr(0644, root, root, 0755)
-%doc COPYING
+%doc libudev/COPYING
 %doc TODO ChangeLog extras/keymap/README.keymap.txt
 %attr(0644,root,root) %{_mandir}/man8/udev*.8*
 %attr(0644,root,root) %{_mandir}/man7/udev*.7*
@@ -359,12 +352,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libgudev1
 %defattr(0644, root, root, 0755)
-%doc COPYING
+%doc extras/gudev/COPYING
 %attr(0755,root,root) /%{_lib}/libgudev-1.0.so.*
 
 %files -n libgudev1-devel
 %defattr(0644, root, root, 0755)
-%doc COPYING
+%doc extras/gudev/COPYING
 %attr(0755,root,root) %{_libdir}/libgudev-1.0.so
 %attr(0644,root,root) %{_includedir}/gudev-1.0/gudev/*.h
 %dir %{_datadir}/gtk-doc/html/gudev

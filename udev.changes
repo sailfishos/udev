@@ -1,3 +1,6 @@
+* Wed Feb 01 2012 Marko Saukko <marko.saukko@gmail.com> - 172
+- Use pkgconfig(usbutils) instead of usbutils-devel, part of fix for MER#137
+
 * Thu Jul 14 2011 Chris Ferron <chris.e.ferron@linux.intel.com> - 172
 - updated udev from v171 to v172 needed for features required 
   by v30 of systemd. 
