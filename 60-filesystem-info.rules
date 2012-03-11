@@ -1,3 +1,0 @@
-# probe filesystem metadata of disks
-SUBSYSTEM=="block",KERNEL!="sr*", IMPORT{program}="/sbin/blkid -o udev -p $tempnode"
-

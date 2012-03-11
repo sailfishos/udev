@@ -1,11 +1,12 @@
-diff -rupN udev-158/rules/rules.d/50-udev-default.rules udev-158-new/rules/rules.d/50-udev-default.rules
---- udev-158/rules/rules.d/50-udev-default.rules	2010-06-18 03:52:15.000000000 +0800
-+++ udev-158-new/rules/rules.d/50-udev-default.rules	2010-07-05 16:02:13.708511383 +0800
-@@ -35,6 +35,7 @@ KERNEL=="winradio*",		GROUP="video"
+diff --git a/rules/rules.d/50-udev-default.rules b/rules/rules.d/50-udev-default.rules
+index 3744707..3bfcad1 100644
+--- a/rules/rules.d/50-udev-default.rules
++++ b/rules/rules.d/50-udev-default.rules
+@@ -33,6 +33,7 @@ KERNEL=="winradio*", GROUP="video"
  
  # graphics
- KERNEL=="agpgart",		GROUP="video"
-+KERNEL=="card[0-9]*",		GROUP="video"
- KERNEL=="pmu",			GROUP="video"
- KERNEL=="nvidia*|nvidiactl*",	GROUP="video"
- SUBSYSTEM=="graphics",		GROUP="video"
+ KERNEL=="agpgart", GROUP="video"
++KERNEL=="card[0-9]*", GROUP="video"
+ KERNEL=="pmu", GROUP="video"
+ KERNEL=="nvidia*|nvidiactl*", GROUP="video"
+ SUBSYSTEM=="graphics", GROUP="video"

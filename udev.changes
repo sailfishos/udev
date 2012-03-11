@@ -1,3 +1,19 @@
+* Thu Feb 09 2012 Marko Saukko <marko.saukko@cybercom.com> - 181
+- Update udev from 172 to 181.
+- Removed patches:
+  - udev-145-reconf.patch
+- Rebased patches:
+  - udev-116-nettype.patch
+  - udev-136-audio-video.patch
+  - udev-136-tty-group.patch
+  - udev-161-oaktrail-ins.patch
+  - udev-input-needs-group.patch
+- Dropped udev.init file as we are using systemd now.
+- Removed 60-filesystem-info.rules, there is buildin blkid in udev.
+- Removed symbolic links to udevadm such as udevinfo, udevtest, udevmonitor etc.
+- Made huge packging cleanup.
+- Dropped all MAKEDEV related stuff.
+
 * Wed Feb 01 2012 Marko Saukko <marko.saukko@gmail.com> - 172
 - Use pkgconfig(usbutils) instead of usbutils-devel, part of fix for MER#137
 
