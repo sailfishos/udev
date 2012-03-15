@@ -1,6 +1,6 @@
-diff -Naurp udev-161-orig/src/extras/keymap/95-keymap.rules udev-161/src/extras/keymap/95-keymap.rules
---- udev-161-orig/src/extras/keymap/95-keymap.rules	2011-05-11 19:20:19.744484811 +0800
-+++ udev-161/src/extras/keymap/95-keymap.rules	2011-05-11 19:22:42.100629437 +0800
+diff -Naurp udev-161-orig/extras/keymap/95-keymap.rules udev-161/extras/keymap/95-keymap.rules
+--- udev-161-orig/extras/keymap/95-keymap.rules	2011-05-11 19:20:19.744484811 +0800
++++ udev-161/extras/keymap/95-keymap.rules	2011-05-11 19:22:42.100629437 +0800
 @@ -137,4 +137,6 @@ ENV{DMI_VENDOR}=="COMPAL", ATTR{[dmi/id]
  
  ENV{DMI_VENDOR}=="OLPC", ATTR{[dmi/id]product_name}=="XO", RUN+="keymap $name olpc-xo"
